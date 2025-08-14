@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+
+content="width=device-width,
+
+initial-scale=1.0">
+
+<title>Acesso Secreto</title>
+
+<style>
+
+body {
+
+font-family: Arial, sans-serif;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+min-height: 80vh;
+
+margin: 0;
+
+background-color: #lalala; /* Fundo
+
+escuro para combinar com o tema */
+
+}
+
+color: #ffffff; /* Texto branco */
+
+padding: 20px;
+
+hl {
+
+color: #00ff00; /* Verde neon para o título
+
+principal */
+
+}
+
+margin-bottom: 5px;
+
+h2{
+
+color: #cccccc; /* Cinza claro para o
+
+subtítulo */
+
+}
+
+font-size: lem;
+
+margin-top: 0;
+
+margin-bottom: 20px;
+
+font-weight: normal;
+
+.input-container {
+
+display: flex;
+
+align-items: center;
+
+margin-top: 15px:
+}
+input[type="text"] {
+
+padding: 12px 15px;
+
+font-size: 16px;
+
+border: 2px solid #00ff00; /* Borda verde
+
+neon */
+
+border-radius: 5px 0 0 5px; /* Cantos
+
+arredondados só na esquerda */
+
+background-color: #333333; /* Fundo
+
+escuro para o campo */
+
+color: #ffffff; /* Texto branco */
+
+width: 250px; /* Largura ajustada */
+
+box-sizing: border-box;
+
+*/outline: none; /* Remove o contorno padrão
+
+}
+
+input[type="text"]::placeholder {
+
+color: #888888; /* Cor do placeholder mais
+
+clara */
+
+}
+
+button {
+
+padding: 12px 20px;
+
+font-size: 16px;
+
+background-color: #00ff00; /* Botão
+
+verde neon */
+
+color: #lalala: /* Texto do botão escuro */
+
+border: none;
+
+border-radius: 0 5px 5px 0; /* Cantos
+
+arredondados só na direita */
+
+}
+
+cursor: pointer;
+
+transition: background-color 0.3s ease;
+
+button:hover {
+
+background-color: #00cc00; /* Verde um
+
+pouco mais escuro no hover */
+
+}
+
+</style>
+
+</head>
+<body>
+
+<h1>Digita a combinação</h1>
+
+<h2>Digite aqui a combinação que lhe foi dada</h2>
+
+<div class="input-container">
+
+<input type="text" id="myInputCode"
+
+placeholder="digitar...">
+
+<button id="submitButton">Entrar</button>
+
+</div>
+
+<script>
+
+const inputField = document.getElementById('myInputCode'); const submitButton =
+
+document.getElementById('submitButton');
+
+const tiktokLink =
+
+"https://www.tiktok.com/@poesiaenigmatic a?_t=ZM-8yrB2WI50A4&_r=1"; // O link do Tik Tok
+
+//--- TESTE DE EXECUÇÃO
+
+alert("O script está sendo carregado!");
+
+//FIM DO TESTE ---
+
+// Função para redirecionar function redirect ToTik Tok() { } window.location.href = tiktokLink;
+
+// Listener para o clique no botão submitButton.addEventListener('click', redirectToTik Tok);
+
+// Listener para a tecla 'Enter' no campo de texto inputField.addEventListener('keypress', function(event) {
+
+// Verifica se a tecla pressionada foi 'Enter' if (event.key === 'Enter') {
+
+event.preventDefault(); // Evita o comportamento padrão do Enter } redirect ToTik Tok();
+
+});
+
+</script>
+
+</body>
+
+</html>
