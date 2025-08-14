@@ -26,7 +26,9 @@ initial-scale=1.0">
 
 <div class="combination-section">
 
-<input type="text" class="input-field" id="combination" placeholder="Digite a combinação aqui">
+<input type="text" class="input-field"
+
+id="combination" placeholder="Digite a combinação aqui">
 
 <div class="error-message"
 
@@ -34,9 +36,15 @@ id="error-message"
 
 style="display:none;">Combinação incorreta, tente novamente.</div>
 
-<a href="#" class="cta-button"
+<a
 
-id="prosseguirLink">Prosseguir</a>
+href="https://www.tiktok.com/@poesiaenig
+
+matica?_t=ZM-8yrB2WI50A4&_r=1"
+
+class="cta-button"
+
+onclick="checkCombination()">Prosseguir</a>
 
 </div>
 
@@ -44,56 +52,29 @@ id="prosseguirLink">Prosseguir</a>
 
 function checkCombination() {
 
-const correctCombination = "LUZIA123"; //
+const correct Combination =
 
-Substitua pela sua combinação correta!
+"sua_combinação_correta"; // Substitua pela combinação correta
 
-const userInput = document.getElementById('combination').va lue;
+const userinput = document.getElementById('combination').va lue;
 
-const errorMessage = document.getElementById('error-message') ;
+ if (userInput !== correctCombination) {
 
-const prosseguirLink = document.getElementById('prosseguirLink');
- if (userInput === correctCombination) {
+document.getElementById('error-message')
 
-errorMessage.style.display = 'none';
+.style.display = 'block';
 
-// Se a combinação estiver correta, redireciona para a próxima página
-
-window.location.href =
-
-"https://www.tiktok.com
-
-/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
-
-return true; // Indica que a ação foi bem
-
-sucedida
+event.preventDefault(); // Impede o redirecionamento se a combinação estiver errada
 
 } else {
 
-errorMessage.style.display = 'block';
+document.getElementById('error-message')
 
-// Impede o redirecionamento se a combinação estiver errada
-
-return false; // Indica que a ação falhou }
+.style.display = 'none';
 
 }
 
-// Adiciona um ouvinte de evento ao botão "Prosseguir"
-
-document.getElementById('prosseguirLink').
-
-addEventListener('click', function(event) {
-
-// Verifica a combinação antes de permitir o clique
-
-if (!checkCombination()) {
-
-event.preventDefault(); // Impede a ação padrão do link se a combinação estiver errada
-
 }
-
-});
 
 </script>
 
