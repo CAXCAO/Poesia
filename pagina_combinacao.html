@@ -26,7 +26,11 @@ initial-scale=1.0">
 
 <div class="combination-section">
 
-<input type="text" class="input-field" id="combination" placeholder="Digite a combinação aqui">
+<input type="text" class="input-field"
+
+id="combination" placeholder="Digite a
+
+combinação aqui">
 
 <div class="error-message"
 
@@ -36,7 +40,7 @@ style="display:none;">Combinação incorreta, tente novamente.</div>
 
 <a href="#" class="cta-button"
 
-id="prosseguirLink">Prosseguir</a>
+onclick="handle Prosseguir (event)">Prosseg uir</a>
 
 </div>
 
@@ -44,21 +48,41 @@ id="prosseguirLink">Prosseguir</a>
 
 function checkCombination() {
 
-const correctCombination = "1101FT"; //
+const correctCombination = "1101FT"; // <<<
 
-Substitua pela sua combinação correta!
+Sua combinação!
 
 const userInput = document.getElementById('combination').va lue;
 
-const errorMessage = document.getElementById('error-message') ;
-
-const prosseguirLink = document.getElementById('prosseguirLink');
-
+const errorMessage = document.getElementById('error-message')
+;
   if (userInput === correctCombination) {
 
 errorMessage.style.display = 'none';
 
-// Se a combinação estiver correta, redireciona para a próxima página
+return true; // Combinação correta
+
+} else {
+
+errorMessage.style.display = 'block';
+
+return false; // Combinação incorreta
+
+}
+
+}
+
+function handle Prosseguir (event) {
+
+if (!checkCombination()) {
+
+event.preventDefault(); // Impede o redirecionamento se a combinação estiver errada
+
+} else {
+
+// Se a combinação estiver correta, o link padrão (href="#") não faz nada,
+
+// então precisamos redirecionar manualmente.
 
 window.location.href =
 
@@ -66,35 +90,9 @@ window.location.href =
 
 /@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
 
-return true; // Indica que a ação foi bem
-
-sucedida
-
-} else {
-
-errorMessage.style.display = 'block';
-
-// Impede o redirecionamento se a combinação estiver errada
-
-return false; // Indica que a ação falhou }
-
 }
 
-// Adiciona um ouvinte de evento ao botão "Prosseguir"
-
-document.getElementById('prosseguirLink').
-
-addEventListener('click', function(event) {
-
-// Verifica a combinação antes de permitir o clique
-
-if (!checkCombination()) {
-
-event.preventDefault(); // Impede a ação padrão do link se a combinação estiver errada
-
 }
-
-});
 
 </script>
 
