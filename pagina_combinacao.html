@@ -26,91 +26,54 @@ initial-scale=1.0">
 
 <div class="combination-section">
 
-<input type="text" class="input-field"
+<input type="text" class="input-field" id="combination" placeholder="Digite a
 
-id="combination" placeholder="Digite a combinação aqui">
+combinação aqui">
 
 <div class="error-message"
 
-id="error-message"
-
-style="display:none;">Combinação incorreta, tente novamente.</div> <a href="#" class="cta-button"
-
-id="prosseguirLink">Prosseguir</a>
-
-</div>
+id="error-message" style="display:none;">Combinação incorreta, tente novamente.</div> </div>
 
 <script>
 
-function checkCombination() { const correctCombination = "1101FT"; // Sua combinação!
+function checkAndRedirect() { const correctCombination = "1101FT"; // Sua combinação!
 
-const userInput = document.getElementById('combination').va lue;
+const userInput =
 
-const errorMessage = document.getElementById('error-message') ;
+document.getElementById('combination').va lue; const errorMessage = document.getElementById('error-message') ;
 
-if (userInput === correctCombination) {
- errorMessage.style.display = 'none';
+// Limpa a mensagem de erro anterior ao tentar novamente errorMessage.style.display = 'none';
+ if (userInput === correctCombination) {
 
-return true: // Combinação correta
+// Combinação correta! Redireciona diretamente.
 
-} else {
-
-errorMessage.style.display = 'block';
-
-return false; // Combinação incorreta }
-
-}
-
-function handle Prosseguir() {
-
-const prosseguirLink =
-
-document.getElementById('prosseguirLink');
-
-const combinationInput = document.getElementById('combination');
-
-// Impedir o comportamento padrão do link (evitar que ele vá para '#')
-
-// Isso é crucial para que o nosso controle funcione.
-
-//O event.preventDefault() deve ser chamado *antes* de qualquer outra coisa.
-
-// Vamos chamar ele aqui na função principal.
-
-if (checkCombination()) {
-
-// Se a combinação estiver correta, vamos alterar o href do link
-
-// para o destino desejado e então "clicar" nele.
-
-prosseguirLink.href =
+window.location.href =
 
 "https://www.tiktok.com
 
-/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
+/@poesiaenigmatica?_t=ZM-8yrB2WI50A4&
 
-// Força o clique no link prosseguirLink.click();
+_r=1";
 
 } else {
 
-// Se a combinação estiver incorreta, apenas mostramos a mensagem de erro
+} // Combinação incorreta errorMessage.style.display = 'block';
 
-// e garantimos que o link não redirecione (o href continua sendo '#').
- //checkCombination() já mostra a mensagem de erro.
+const combinationInput = document.getElementById('combination');
 
-// O preventDefault() está implícito aqui porque o href é '#' e não faremos nada mais.
+// Adiciona um listener para o campo de input para verificar a cada digitação combinationInput.addEventListener('input', checkAndRedirect);
 
-// Se o link tivesse um href diferente, precisaríamos do preventDefault. } }
+// Adicionamos um listener para a tecla Enter
 
-const prosseguirLinkElement = document.getElementById('prosseguirLink'); const combinationInput Element = document.getElementById('combination');
+no campo de input combinationInput.addEventListener('keypre ss', function(event) { if (event.key === 'Enter') { event.preventDefault(); // Impede o envio do formulário se houver um } checkAndRedirect(); });
 
-// Adicionamos o listener ao link prosseguir LinkElement.addEventListener('cli ck', function(event) { // Impedimos o comportamento padrão do link (ir para '#') event.preventDefault(); handle Prosseguir(); });
+// Se você quiser que a validação aconteça apenas ao clicar em um botão separado,
 
-// Adicionamos um listener para a tecla Enter no campo de input combinationInputElement.addEventListener( 'keypress', function(event) { if (event.key === 'Enter') { event.preventDefault(); // Impede o envio do formulário se houver um } }); handle Prosseguir();
+// em vez de a cada digitação ou Enter, podemos adaptar.
 
-// Para garantir que o link não redirecione por padrão se o JS falhar ou não rodar prosseguirLinkElement.href = "#";
-
+// Por enquanto, estou assumindo que você quer que aconteça ao Enter ou ao digitar.
+                                                                                                               
 </script>
-
+ 
 </body>
 </html>
