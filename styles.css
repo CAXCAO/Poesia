@@ -1,0 +1,83 @@
+/* styles.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fonte padrão */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Garante que o conteúdo ocupe a tela toda */
+    text-align: center;
+}
+
+/* Gradiente para páginas que não têm o quadro negro */
+.gradient-background {
+    background: linear-gradient(to bottom, #ffffff, #90ee90); /* Branco para Verde Claro */
+}
+
+/* Estilo para o quadro negro */
+.blackboard-container {
+    width: 80%; /* Ajuste conforme necessário */
+    max-width: 600px; /* Limite de largura */
+    margin: 20px auto;
+    background-image: url('https://github.com/CAXCAO/Poesia/blob/2fc3a185786d7a32e244e9bcf60ed1d3046018f2/a98722a0-a9db-4bc5-8cf1-5a2fedff6e8a.jpeg?raw=true'); /* URL do quadro negro */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    padding: 30px;
+    box-sizing: border-box; /* Inclui padding na largura total */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px; /* Altura mínima para o quadro */
+}
+
+/* Estilo para o texto dentro do quadro negro */
+.blackboard-content {
+    color: #ffffff; /* Texto branco para contraste */
+    font-size: 1.5em; /* Tamanho da fonte para as fórmulas */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Sombra para legibilidade */
+}
+
+/* Estilo para os botões */
+.cta-button {
+    background-color: #ffffff; /* Fundo branco */
+    color: #2E8B57; /* Verde Musgo */
+    font-family: 'Verdana', Geneva, Tahoma, sans-serif; /* Fonte específica */
+    font-size: 1.1em;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 20px; /* Espaço acima do botão */
+    display: inline-block; /* Para que o margin-top funcione corretamente */
+}
+
+.cta-button:hover {
+    background-color: #2E8B57; /* Verde Musgo no hover */
+    color: #ffffff; /* Branco no hover */
+}
+
+/* Estilo para o campo de digitação */
+.input-field {
+    padding: 10px;
+    margin-top: 10px;
+    border: 2px solid #2E8B57; /* Borda Verde Musgo */
+    border-radius: 5px;
+    font-size: 1em;
+    text-align: center;
+    width: 80%;
+    max-width: 300px;
+}
+
+/* Estilo para a mensagem de erro */
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+}
+```
