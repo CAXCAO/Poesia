@@ -12,68 +12,136 @@ content="width=device-width,
 
 initial-scale=1.0">
 
-<title>Digite a Combinação</title>
+<title>Digite Algo e Prosseguir</title>
 
-<link rel="stylesheet" href="styles.css">
+<style>
+
+body {
+
+font-family: Arial, sans-serif;
+
+text-align: center;
+
+padding: 20px;
+
+display: flex;
+
+flex-direction: column;
+
+align-items: center;
+
+justify-content: center;
+
+height: 80vh; /* Para centralizar
+
+verticalmente */
+
+}
+
+margin: 0;
+
+input[type="text"] {
+
+}
+
+padding: 10px;
+
+font-size: 16px;
+
+margin-bottom: 15px;
+
+border: 1px solid #ccc;
+
+border-radius: 4px;
+
+width: 250px;
+
+button {
+
+padding: 12px 25px;
+
+font-size: 16px;
+
+cursor: pointer;
+
+background-color: #007bff; /* Um azul
+
+padrão */
+
+color: white:
+
+border: none:
+
+border-radius: 5px;
+ }
+
+transition: background-color 0.3s ease;
+
+button:hover {
+
+}
+
+background-color: #0056b3;
+
+</style>
 
 </head>
 
 <body>
 
-<h1>Digite a Combinação</h1>
+<h1>Digite algo e aperte Enter</h1>
 
-<p>Agora que voltou, digite aqui a combinação que lhe foi fornecida. </p>
+<p>Qualquer coisa que você digitar aqui te levará ao nosso conteúdo!</p>
 
-<div class="combination-section">
+<input type="text" id="userInput"
 
-<input type="text" class="input-field" id="combination" placeholder="Digite a
+placeholder="Escreva qualquer coisa...">
 
-combinação aqui">
-
-<div class="error-message"
-
-id="error-message" style="display:none;">Combinação incorreta, tente novamente.</div> </div>
+<button id="prosseguirButton">Prosseguir</button>
 
 <script>
 
-function checkAndRedirect() { const correctCombination = "1101FT"; // Sua combinação!
+const inputField= document.getElementById('userInput');
 
-const userInput =
+const prosseguirButton = document.getElementById('prosseguirButto n');
 
-document.getElementById('combination').va lue; const errorMessage = document.getElementById('error-message') ;
-
-// Limpa a mensagem de erro anterior ao tentar novamente errorMessage.style.display = 'none';
- if (userInput === correctCombination) {
-
-// Combinação correta! Redireciona diretamente.
+// Função para redirecionar function redirect ToTik Tok() {
 
 window.location.href =
 
 "https://www.tiktok.com
 
-/@poesiaenigmatica?_t=ZM-8yrB2WI50A4&
+/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
 
-_r=1";
+}
 
-} else {
+// Evento para o botão prosseguirButton.addEventListener('click',
 
-} // Combinação incorreta errorMessage.style.display = 'block';
+function() { redirectToTik Tok(); });
+ // Evento para a tecla Enter no campo de
 
-const combinationInput = document.getElementById('combination');
+texto
 
-// Adiciona um listener para o campo de input para verificar a cada digitação combinationInput.addEventListener('input', checkAndRedirect);
+inputField.addEventListener('keypress', function(event) {
 
-// Adicionamos um listener para a tecla Enter
+// Verifica se a tecla pressionada foi Enter
 
-no campo de input combinationInput.addEventListener('keypre ss', function(event) { if (event.key === 'Enter') { event.preventDefault(); // Impede o envio do formulário se houver um } checkAndRedirect(); });
+if (event.key === 'Enter') {
 
-// Se você quiser que a validação aconteça apenas ao clicar em um botão separado,
+event.preventDefault();
 
-// em vez de a cada digitação ou Enter, podemos adaptar.
+// Impede o
 
-// Por enquanto, estou assumindo que você quer que aconteça ao Enter ou ao digitar.
-                                                                                                               
+comportamento padrão do Enter (como enviar um formulário)
+
+redirect ToTikTok();
+
+}
+
+});
+
 </script>
- 
+
 </body>
+
 </html>
