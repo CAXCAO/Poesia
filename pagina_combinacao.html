@@ -34,55 +34,33 @@ combinação aqui">
 
 <div class="error-message"
 
-id="error-message"
-
-style="display:none;">Combinação incorreta, tente novamente.</div>
-
-<a href="#" class="cta-button"
-
-onclick="handle Prosseguir (event)">Prosseg uir</a>
+id="error-message" style="display:none;">Combinação incorreta, tente novamente.</div> <a href="#" class="cta-button" id="prosseguir Link">Prosseguir</a>
 
 </div>
 
 <script>
 
-function checkCombination() {
-
-const correctCombination = "1101FT"; // <<<
-
-Sua combinação!
-
-const userInput = document.getElementById('combination').va lue;
+function handle Prosseguir Click(event) { const correctCombination = "1101FT"; // Sua combinação! const userInput = document.getElementById('combination').va lue;
 
 const errorMessage = document.getElementById('error-message')
-;
-  if (userInput === correctCombination) {
+
+const prosseguirLink = document.getElementById('prosseguirLink');
+
+ // Limpa a mensagem de erro anterior ao tentar novamente
 
 errorMessage.style.display = 'none';
 
-return true; // Combinação correta
+if (userInput === correctCombination) {
 
-} else {
+// Combinação correta! Removemos o listener para evitar múltiplos
 
-errorMessage.style.display = 'block';
+redirecionamentos
 
-return false; // Combinação incorreta
+// e permitimos que o link (que agora tem o href correto) seja clicado.
 
-}
+prosseguirLink.removeEventListener('click',
 
-}
-
-function handle Prosseguir (event) {
-
-if (!checkCombination()) {
-
-event.preventDefault(); // Impede o redirecionamento se a combinação estiver errada
-
-} else {
-
-// Se a combinação estiver correta, o link padrão (href="#") não faz nada,
-
-// então precisamos redirecionar manualmente.
+handle ProsseguirClick);
 
 window.location.href =
 
@@ -90,12 +68,44 @@ window.location.href =
 
 /@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
 
+// Ou, se preferir que o link redirecione diretamente ao ser clicado:
+
+// prosseguirLink.href =
+
+"https://www.tiktok.com
+
+/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
+
+// prosseguirLink.click(); // Força o clique no
+
+link com o novo href
+
+//event.preventDefault(); // Não é mais necessário se o href for alterado e clicado
+
+} else {
+
+// Combinação incorreta
+
+errorMessage.style.display = 'block'; event.preventDefault(); // Impede o
+
+redirecionamento
+
 }
 
 }
+
+// Adiciona o listener ao link
+
+const prosseguirLinkElement =
+
+document.getElementById('prosseguirLink'); prosseguir LinkElement.addEventListener('cli
+
+ck' handle Prosseguir Click):
+  
+// Para garantir que o link não redirecione por padrão se o JS falhar ou não rodar prosseguirLinkElement.href = "#";
 
 </script>
 
 </body>
 
-</html>
+</html>                                    
