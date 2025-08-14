@@ -28,84 +28,89 @@ initial-scale=1.0">
 
 <input type="text" class="input-field"
 
-id="combination" placeholder="Digite a
-
-combinação aqui">
+id="combination" placeholder="Digite a combinação aqui">
 
 <div class="error-message"
 
-id="error-message" style="display:none;">Combinação incorreta, tente novamente.</div> <a href="#" class="cta-button" id="prosseguir Link">Prosseguir</a>
+id="error-message"
+
+style="display:none;">Combinação incorreta, tente novamente.</div> <a href="#" class="cta-button"
+
+id="prosseguirLink">Prosseguir</a>
 
 </div>
 
 <script>
 
-function handle Prosseguir Click(event) { const correctCombination = "1101FT"; // Sua combinação! const userInput = document.getElementById('combination').va lue;
+function checkCombination() { const correctCombination = "1101FT"; // Sua combinação!
 
-const errorMessage = document.getElementById('error-message')
+const userInput = document.getElementById('combination').va lue;
 
-const prosseguirLink = document.getElementById('prosseguirLink');
-
- // Limpa a mensagem de erro anterior ao tentar novamente
-
-errorMessage.style.display = 'none';
+const errorMessage = document.getElementById('error-message') ;
 
 if (userInput === correctCombination) {
+ errorMessage.style.display = 'none';
 
-// Combinação correta! Removemos o listener para evitar múltiplos
-
-redirecionamentos
-
-// e permitimos que o link (que agora tem o href correto) seja clicado.
-
-prosseguirLink.removeEventListener('click',
-
-handle ProsseguirClick);
-
-window.location.href =
-
-"https://www.tiktok.com
-
-/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
-
-// Ou, se preferir que o link redirecione diretamente ao ser clicado:
-
-// prosseguirLink.href =
-
-"https://www.tiktok.com
-
-/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
-
-// prosseguirLink.click(); // Força o clique no
-
-link com o novo href
-
-//event.preventDefault(); // Não é mais necessário se o href for alterado e clicado
+return true: // Combinação correta
 
 } else {
 
-// Combinação incorreta
+errorMessage.style.display = 'block';
 
-errorMessage.style.display = 'block'; event.preventDefault(); // Impede o
-
-redirecionamento
+return false; // Combinação incorreta }
 
 }
 
-}
+function handle Prosseguir() {
 
-// Adiciona o listener ao link
+const prosseguirLink =
 
-const prosseguirLinkElement =
+document.getElementById('prosseguirLink');
 
-document.getElementById('prosseguirLink'); prosseguir LinkElement.addEventListener('cli
+const combinationInput = document.getElementById('combination');
 
-ck' handle Prosseguir Click):
-  
+// Impedir o comportamento padrão do link (evitar que ele vá para '#')
+
+// Isso é crucial para que o nosso controle funcione.
+
+//O event.preventDefault() deve ser chamado *antes* de qualquer outra coisa.
+
+// Vamos chamar ele aqui na função principal.
+
+if (checkCombination()) {
+
+// Se a combinação estiver correta, vamos alterar o href do link
+
+// para o destino desejado e então "clicar" nele.
+
+prosseguirLink.href =
+
+"https://www.tiktok.com
+
+/@poesiaenigmatica?_t=ZM-8yrB2WI50A4& _r=1";
+
+// Força o clique no link prosseguirLink.click();
+
+} else {
+
+// Se a combinação estiver incorreta, apenas mostramos a mensagem de erro
+
+// e garantimos que o link não redirecione (o href continua sendo '#').
+ //checkCombination() já mostra a mensagem de erro.
+
+// O preventDefault() está implícito aqui porque o href é '#' e não faremos nada mais.
+
+// Se o link tivesse um href diferente, precisaríamos do preventDefault. } }
+
+const prosseguirLinkElement = document.getElementById('prosseguirLink'); const combinationInput Element = document.getElementById('combination');
+
+// Adicionamos o listener ao link prosseguir LinkElement.addEventListener('cli ck', function(event) { // Impedimos o comportamento padrão do link (ir para '#') event.preventDefault(); handle Prosseguir(); });
+
+// Adicionamos um listener para a tecla Enter no campo de input combinationInputElement.addEventListener( 'keypress', function(event) { if (event.key === 'Enter') { event.preventDefault(); // Impede o envio do formulário se houver um } }); handle Prosseguir();
+
 // Para garantir que o link não redirecione por padrão se o JS falhar ou não rodar prosseguirLinkElement.href = "#";
 
 </script>
 
 </body>
-
-</html>                                    
+</html>
